@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    let createSymbol = Image(systemName: "plus.app")
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                Text("No notes created, click \(createSymbol) to create one")
+            }
+            .navigationTitle("Notes")
         }
-        .padding()
     }
 }
 

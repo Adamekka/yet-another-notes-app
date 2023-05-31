@@ -11,10 +11,20 @@ struct ContentView: View {
     let createSymbol = Image(systemName: "plus.app")
     var body: some View {
         NavigationView {
+            // Notes list
             List {
                 Text("No notes created, click \(createSymbol) to create one")
             }
             .navigationTitle("Notes")
+
+            // Bottom bar
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    Button(action: {}) {
+                        Text(createSymbol)
+                    }
+                }
+            }
         }
     }
 }

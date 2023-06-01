@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     let createSymbol = Image(systemName: "plus.app")
+
+    @State var createNotePopupShown = false
+
     var body: some View {
         NavigationView {
             // Notes list
@@ -20,10 +23,15 @@ struct ContentView: View {
             // Bottom bar
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
-                    Button(action: {}) {
-                        Text(createSymbol)
+                    Button("\(createSymbol)") {
+                        createNotePopupShown = true
                     }
                 }
+            }
+
+            // Create new note popover
+            .popover(isPresented: $createNotePopupShown) {
+                Text("Create new note")
             }
         }
     }

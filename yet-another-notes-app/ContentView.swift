@@ -10,9 +10,13 @@ import SwiftUI
 struct ContentView: View {
     let createSymbol = Image(systemName: "plus.app")
 
-    @State var createNotePopupShown: Bool = false
+    // Note states
+    @State var createNotePopoverShown: Bool = false
     @State var noteName: String = ""
     @State var noteContents: String = ""
+
+    // Alert states
+    @State var noNoteNameAlertShown: Bool = false
 
     var body: some View {
         NavigationView {
@@ -26,13 +30,13 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     Button("\(createSymbol)") {
-                        createNotePopupShown = true
+                        createNotePopoverShown = true
                     }
                 }
             }
 
             // Create new note popover
-            .popover(isPresented: $createNotePopupShown) {
+            .popover(isPresented: $createNotePopoverShown) {
                 NavigationView {
                     Form {
                         Section(header: Text("Details")) {
@@ -44,15 +48,37 @@ struct ContentView: View {
                         .toolbar {
                             ToolbarItem(placement: .bottomBar) {
                                 Button("Done") {
+                                    // Handle no note name
+                                    if noteName.isEmpty {
+                                        noteName = "Untitled note"
+                                        noNoteNameAlertShown = true
+                                    } else {
+                                        // Close popover if no alerts are shown
+                                        createNotePopoverShown = false
+                                    }
+
                                     let note = Note(name: noteName, data: noteContents)
                                     print(note)
+
+                                    // Clear buffers
                                     noteName = ""
                                     noteContents = ""
-                                    createNotePopupShown = false
                                 }
                             }
                         }
                 }
+
+                // No name alert
+                .alert(
+                    "No note name entered", isPresented: $noNoteNameAlertShown,
+                    actions: {
+                        Button("OK") {
+                            createNotePopoverShown = false
+                            noNoteNameAlertShown = false
+                        }
+                    },
+                    message: { Text("Defaulting to 'Untitled note'") }
+                )
             }
         }
     }

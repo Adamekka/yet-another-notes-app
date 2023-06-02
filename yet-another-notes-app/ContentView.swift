@@ -10,7 +10,9 @@ import SwiftUI
 struct ContentView: View {
     let createSymbol = Image(systemName: "plus.app")
 
-    @State var createNotePopupShown = false
+    @State var createNotePopupShown: Bool = false
+    @State var noteName: String = ""
+    @State var noteContents: String = ""
 
     var body: some View {
         NavigationView {
@@ -31,7 +33,26 @@ struct ContentView: View {
 
             // Create new note popover
             .popover(isPresented: $createNotePopupShown) {
-                Text("Create new note")
+                NavigationView {
+                    Form {
+                        Section(header: Text("Details")) {
+                            TextField("Name", text: $noteName)
+                            TextField("Contents", text: $noteContents, axis: .vertical)
+                        }
+                    }.navigationTitle("Create a new note")
+
+                        .toolbar {
+                            ToolbarItem(placement: .bottomBar) {
+                                Button("Done") {
+                                    let note = Note(name: noteName, data: noteContents)
+                                    print(note)
+                                    noteName = ""
+                                    noteContents = ""
+                                    createNotePopupShown = false
+                                }
+                            }
+                        }
+                }
             }
         }
     }

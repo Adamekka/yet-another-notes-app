@@ -9,16 +9,12 @@ import Foundation
 
 struct Note {
     var name: String
-    let dateCreated: Date
-    var dateEdited: Date
+    let dateCreated: Date = Date()
+    var dateEdited: Date = Date()
     var data: String
 
-    func new(name: String, data: String) -> Note {
-        return Note(
-            name: name,
-            dateCreated: Date(),
-            dateEdited: Date(),
-            data: data
-        )
+    init(name: String, data: String) {
+        self.name = name
+        self.data = data
     }
 }

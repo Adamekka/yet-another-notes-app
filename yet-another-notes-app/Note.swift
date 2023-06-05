@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct Note {
+/// Note struct representing a single note that user can create and save data in it
+struct Note: Codable, Identifiable {
+    var id: UUID = UUID()
     var name: String
-    let dateCreated: Date = Date()
+    var dateCreated: Date = Date()
     var dateEdited: Date = Date()
     var data: String
 

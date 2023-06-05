@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    // Constants
     let createSymbol = Image(systemName: "plus.app")
 
     // Note states

@@ -11,6 +11,9 @@ struct ContentView: View {
     // Constants
     let createSymbol = Image(systemName: "plus.app")
 
+    // Global variables
+    var notes = Notes()
+
     // Note states
     @State var createNotePopoverShown: Bool = false
     @State var noteName: String = ""
@@ -60,6 +63,7 @@ struct ContentView: View {
 
                                     let note = Note(name: noteName, data: noteContents)
                                     print(note)
+                                    notes.add(note: note)
 
                                     // Clear buffers
                                     noteName = ""

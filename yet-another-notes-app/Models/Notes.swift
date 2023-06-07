@@ -27,5 +27,6 @@ final class Notes: Codable {
 
     func addNote(note: Note) {
         notes.append(note)
+        saveNotesToUserDefaults()
     }
 }

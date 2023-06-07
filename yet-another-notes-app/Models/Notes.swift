@@ -25,7 +25,7 @@ final class Notes: Codable {
         UserDefaults.standard.save(key: DefaultKeys.NOTES_KEY, obj: self)
     }
 
-    func addNote(note: Note) {
+    func add(note: Note) {
         notes.append(note)
         saveNotesToUserDefaults()
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B00509002A2FA44300FB1BDD /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00508FF2A2FA44300FB1BDD /* Notes.swift */; };
 		B097AC152A2780ED003B91A6 /* yet_another_notes_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B097AC142A2780ED003B91A6 /* yet_another_notes_appApp.swift */; };
 		B097AC172A2780ED003B91A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B097AC162A2780ED003B91A6 /* ContentView.swift */; };
 		B097AC192A2780EF003B91A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B097AC182A2780EF003B91A6 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B00508FF2A2FA44300FB1BDD /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		B097AC112A2780ED003B91A6 /* yet-another-notes-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yet-another-notes-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B097AC142A2780ED003B91A6 /* yet_another_notes_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yet_another_notes_appApp.swift; sourceTree = "<group>"; };
 		B097AC162A2780ED003B91A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B00508FE2A2FA42800FB1BDD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B00508FF2A2FA44300FB1BDD /* Notes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B097AC082A2780ED003B91A6 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +63,7 @@
 		B097AC132A2780ED003B91A6 /* yet-another-notes-app */ = {
 			isa = PBXGroup;
 			children = (
+				B00508FE2A2FA42800FB1BDD /* Models */,
 				B097AC142A2780ED003B91A6 /* yet_another_notes_appApp.swift */,
 				B097AC162A2780ED003B91A6 /* ContentView.swift */,
 				B097AC182A2780EF003B91A6 /* Assets.xcassets */,
@@ -143,6 +154,7 @@
 				B097AC172A2780ED003B91A6 /* ContentView.swift in Sources */,
 				B097AC152A2780ED003B91A6 /* yet_another_notes_appApp.swift in Sources */,
 				B097AC232A27AE82003B91A6 /* Note.swift in Sources */,
+				B00509002A2FA44300FB1BDD /* Notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

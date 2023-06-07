@@ -41,6 +41,7 @@
 		B00508FE2A2FA42800FB1BDD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B097AC222A27AE82003B91A6 /* Note.swift */,
 				B00508FF2A2FA44300FB1BDD /* Notes.swift */,
 			);
 			path = Models;
@@ -79,7 +80,6 @@
 				B097AC162A2780ED003B91A6 /* ContentView.swift */,
 				B097AC182A2780EF003B91A6 /* Assets.xcassets */,
 				B097AC1A2A2780EF003B91A6 /* Preview Content */,
-				B097AC222A27AE82003B91A6 /* Note.swift */,
 			);
 			path = "yet-another-notes-app";
 			sourceTree = "<group>";

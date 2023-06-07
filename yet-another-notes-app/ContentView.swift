@@ -25,8 +25,18 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             // Notes list
-            List {
-                Text("No notes created, click \(createSymbol) to create one")
+            //if notes.notes.isEmpty {
+            //List {
+            //    Text("No notes created, click \(createSymbol) to create one")
+            //}
+            //.navigationTitle("Notes")
+            //}
+            List(notes.notes) { note in
+                Section {
+                    Text(note.name)
+                        .fontWeight(.heavy)
+                    Text(note.data)
+                }
             }
             .navigationTitle("Notes")
 
